@@ -1,11 +1,11 @@
 steps:
   # Step 1: Install Python dependencies
-  - name: 'python'
+  - name: "python"
     entrypoint: pip
     args: ["install", "-r", "utils/requirements.txt", "--user"]
 
   # Step 2: Run the script to upload DAGs and Data to Composer bucket
-  - name: 'python'
+  - name: "python"
     entrypoint: python
     args:
       - "utils/add_dags_to_composer.py"
@@ -18,5 +18,5 @@ options:
 
 substitutions:
   _DAGS_DIRECTORY: "workflows/"
-  _DAGS_BUCKET: "us-central1-retailer-datala-5bcd34a7-buckets"
+  _DAGS_BUCKET: "us-central1-retailer-datala-5bcd34a7-bucket"
   _DATA_DIRECTORY: "data/"
